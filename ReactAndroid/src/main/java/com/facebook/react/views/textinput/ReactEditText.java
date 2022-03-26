@@ -125,7 +125,9 @@ public class ReactEditText extends AppCompatEditText {
     mListeners = null;
     mTextWatcherDelegator = null;
     mStagedInputType = getInputType();
-    mKeyListener = new InternalKeyListener();
+    if (mKeyListener == null) {
+      mKeyListener = new InternalKeyListener();
+    }
     mScrollWatcher = null;
     mTextAttributes = new TextAttributes();
 
@@ -401,6 +403,10 @@ public class ReactEditText extends AppCompatEditText {
     // We override the KeyListener so that all keys on the soft input keyboard as well as hardware
     // keyboards work. Some KeyListeners like DigitsKeyListener will display the keyboard but not
     // accept all input from it
+    if (mKeyListener == null) {
+      mKeyListener = new InternalKeyListener();
+    }
+
     mKeyListener.setInputType(type);
     setKeyListener(mKeyListener);
   }
