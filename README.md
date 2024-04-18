@@ -1,4 +1,14 @@
 <h1 align="center">
+  DEPRECATED FORK
+</h1>
+
+<p align="center">
+  Please see the main project at https://github.com/facebook/react-native/
+</p>
+
+<hr/>
+
+<h1 align="center">
   <a href="https://reactnative.dev/">
     React Native
   </a>
